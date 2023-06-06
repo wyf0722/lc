@@ -54,8 +54,3 @@ string to_string(A v) {
     res += "}";
     return res;
 }
-
-int main() {
-
-    return 0;
-}

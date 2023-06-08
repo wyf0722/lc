@@ -54,3 +54,9 @@ string to_string(A v) {
     res += "}";
     return res;
 }
+
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};

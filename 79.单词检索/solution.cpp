@@ -13,8 +13,6 @@ public:
         if(board[x][y] != word[index]) return false;
         // 到达word结尾,并且当前到达board的字符等于word末尾字符
         if(board[x][y] == word[index] && index == word.size() - 1) return true;
-        // 当前位置已经访问
-        visited[x][y] = 1;
         // 上下左右四个方向
         for(auto [i, j]: dir) {
             int xx = x + i;
@@ -25,7 +23,6 @@ public:
                 visited[xx][yy] = 0;
             }
         }
-        visited[x][y] = 0;
         return false;
     }
 
@@ -35,7 +32,9 @@ public:
         memset(visited, 0, sizeof(visited));
         for(int i = 0; i < m; i++) {
             for(int j = 0; j < n; j++) {
+                visited[i][j] = 1;
                 if(dfs(i, j, 0, word, board)) return true;
+                visited[i][j] = 0;
             }
         }
         return false;

@@ -1,8 +1,4 @@
 from functools import cache
 import logging
-
-def exist(x):
-    return x is not 1
-
-print(exist(1))
-print(exist(None))
+s = '110'
+print(1 == int(s[-1]))
